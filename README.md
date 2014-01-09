@@ -1,2 +1,2 @@
-hippo-plugins
+Hippo Plugins
 =============
