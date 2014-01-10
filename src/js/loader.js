@@ -115,7 +115,7 @@
             $('head').append('<script>angular.bootstrap(document.getElementById(\'container\'), [\'' + app + '\']);</' + 'script>');
         }).fail(function (jqXHR, textStatus, errorThrown) {
             errorThrown.message = '[Loader error (' + textStatus + ')]: ' + errorThrown.message;
-            //console.warn(errorThrown.message);
+            console.warn(errorThrown.message);
         });
     };
 
