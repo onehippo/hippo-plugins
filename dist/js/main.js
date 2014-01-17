@@ -1,33 +1,47 @@
-(function() {
-  "use strict";
+(function () {
+    "use strict";
 
-  angular.module('hippo.plugins', [])
+    angular.module('hippo.plugins', [])
 
-  /*
-   *
-   */
-  .provider('URLBuilder', function() {
-    this.prefix = 'components';
-    this.exempt = [];
+    /**
+     * Filter 'hippo.plugins.asset' that transforms a plugin-relative path to a packaged path.
+     * The plugin can be specified on the scope, or in the template.  The template takes precedence.
+     * <p>
+     * Note that scope (prototypical) inheritance takes care of providing the plugin property in nested templates.
+     */
+            .filter('hippo.plugins.asset', ['hippo.plugins.url', function (buildUrl) {
+                return function (path, plugin) {
+                    return buildUrl((plugin ? plugin : this.plugin), path);
+                };
+            }])
 
-    this.setPrefix = function(prefix) {
-      this.prefix = prefix;
-    };
+        /*
+         *
+         */
+            .provider('hippo.plugins.url', function () {
+                this.prefix = 'components';
+                this.exempt = [];
 
-    this.useRoot = function(module) {
-      this.exempt.push(module);
-    };
+                this.setPrefix = function (prefix) {
+                    this.prefix = prefix;
+                };
 
-    this.$get = function() {
-      var prefix = this.prefix,
-        exempt = this.exempt;
-      return function buildUrl(module, path) {
-        if (exempt.indexOf(module) < 0) {
-          return prefix + '/' + module + '/dist/' + path;
-        } else {
-          return 'src/' + path;
-        }
-      };
-    };
-  });
+                this.useRoot = function (pluginName) {
+                    this.exempt.push(pluginName);
+                };
+
+                this.$get = function () {
+                    var prefix = this.prefix,
+                            exempt = this.exempt;
+                    return function buildUrl(pluginName, path) {
+                        if (!pluginName) {
+                            return path;
+                        } else if (exempt.indexOf(pluginName) < 0) {
+                            return prefix + '/' + pluginName + '/dist/' + path;
+                        } else {
+                            return 'src/' + path;
+                        }
+                    };
+                };
+            });
 })();
