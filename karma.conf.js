@@ -61,6 +61,10 @@ module.exports = function (config) {
 
         port: 9876,
         browsers: ['PhantomJS'],
-        reporters: ['dots', 'junit']
+        reporters: ['dots', 'junit'],
+
+        junitReporter: {
+            outputFile: 'target/test-results.xml'
+        }
     });
 };
