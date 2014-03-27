@@ -33,8 +33,23 @@ module.exports = function (grunt) {
         // configuration
         cfg: cfg,
 
-        // clean target (distribution) folder
-        clean: [ 'dist/**/*' ],
+        // clean dependencies and distribution folder
+        clean: {
+            bower: {
+                files: [{
+                    expand: true,
+                    src: [
+                        'components/**'
+                    ]
+                }]
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    src: [ 'dist/**/*' ]
+                }]
+            },
+        },
 
         // copy files
         copy: {
@@ -105,28 +120,26 @@ module.exports = function (grunt) {
     });
 
     // default
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('default', 'Build and test', [
+        'build',
+        'test'
+    ]);
 
     // build
-    grunt.registerTask('build', function (target) {
-        var tasks = [
-            'jshint',
-            'karma:single',
-            'clean',
-            'copy',
-            'concat:dist',
-            'uglify:dist'
-        ];
-
-        grunt.task.run(tasks);
-    });
+    grunt.registerTask('build', 'Build everything', [
+        'jshint',
+        'clean:dist',
+        'copy',
+        'concat:dist',
+        'uglify:dist'
+    ]);
 
     // test
-    grunt.registerTask('test:unit', [
+    grunt.registerTask('test', 'Test the source code', [
         'karma:single'
     ]);
 
-    grunt.registerTask('test:unit:continuous', [
+    grunt.registerTask('test:continuous', 'Test the source code continuously', [
         'karma:continuous'
     ]);
 

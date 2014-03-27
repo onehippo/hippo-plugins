@@ -28,12 +28,16 @@ Run the commands below in the project root directory.
 ####Generate build
 The build version is located in the `dist` directory.
 
-    $ grunt build
+    $ grunt
 
-####Run tests
+####Run tests separately
 The tests need to pass in order to generate a build.
 
-    $ grunt test:unit
+    $ grunt test
+
+Tests can also be run continuously:
+
+    $ grunt test:continuous
 
 ## Deployment to Nexus
 #### Prerequisites
