@@ -35,20 +35,8 @@ module.exports = function (grunt) {
 
         // clean dependencies and distribution folder
         clean: {
-            bower: {
-                files: [{
-                    expand: true,
-                    src: [
-                        'components/**'
-                    ]
-                }]
-            },
-            dist: {
-                files: [{
-                    expand: true,
-                    src: [ 'dist/**/*' ]
-                }]
-            },
+            bower: [ 'components/**' ],
+            dist: [ 'dist/**/*' ]
         },
 
         // copy files
