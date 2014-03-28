@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "angular": "1.2.0-rc.2",
-    "angular-mocks": "1.2.0-rc.2",
+    "angular": "1.2.15",
+    "angular-mocks": "1.2.15",
     "ExplorerCanvas": "#1735174401034391aa632957b17ce4a167613a83",
     "es5-shim": "#d24a08dfe81e0eda3d5e9f3b859d63c1da05aba7",
     "fastclick": "0.6.11",
