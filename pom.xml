@@ -25,6 +25,7 @@
 
   <name>Hippo Plugins</name>
   <description>Hippo Plugins</description>
+  <groupId>org.onehippo.cms7.frontend</groupId>
   <artifactId>hippo-plugins</artifactId>
   <version>1.01.00-SNAPSHOT</version>
   <packaging>pom</packaging>
