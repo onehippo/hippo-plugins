@@ -20,14 +20,14 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>26-iteration-79</version>
+    <version>26-iteration-80</version>
   </parent>
 
   <name>Hippo Plugins</name>
   <description>Hippo Plugins</description>
   <groupId>org.onehippo.cms7.frontend</groupId>
   <artifactId>hippo-plugins</artifactId>
-  <version>1.01.01-SNAPSHOT</version>
+  <version>1.01.01-iteration-80</version>
   <packaging>pom</packaging>
 
   <repositories>
@@ -48,7 +48,7 @@
     <connection>scm:git:git@github.com:onehippo/hippo-plugins.git</connection>
     <developerConnection>scm:git:git@github.com:onehippo/hippo-plugins.git</developerConnection>
     <url>https://github.com/onehippo/hippo-plugins</url>
-    <tag>HEAD</tag>
+    <tag>hippo-plugins-1.01.01-iteration-80</tag>
   </scm>
 
   <build>
