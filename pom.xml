@@ -27,7 +27,7 @@
   <description>Hippo Plugins</description>
   <groupId>org.onehippo.cms7.frontend</groupId>
   <artifactId>hippo-plugins</artifactId>
-  <version>1.01.01</version>
+  <version>1.01.02-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <repositories>
@@ -48,7 +48,7 @@
     <connection>scm:git:git@github.com:onehippo/hippo-plugins.git</connection>
     <developerConnection>scm:git:git@github.com:onehippo/hippo-plugins.git</developerConnection>
     <url>https://github.com/onehippo/hippo-plugins</url>
-    <tag>hippo-plugins-1.01.01</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
