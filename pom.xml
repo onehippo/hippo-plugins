@@ -48,7 +48,7 @@
     <connection>scm:git:git@github.com:onehippo/hippo-plugins.git</connection>
     <developerConnection>scm:git:git@github.com:onehippo/hippo-plugins.git</developerConnection>
     <url>https://github.com/onehippo/hippo-plugins</url>
-    <tag>HEAD</tag>
+    <tag>1.01.xx</tag>
   </scm>
 
   <build>
